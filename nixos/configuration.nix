@@ -39,7 +39,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     tmux vimHugeX
-    firefox
+    firefox keybase-gui
     pass git pinentry-curses gnupg
     aerc quasselClient
     rcm zsh alacritty
@@ -48,6 +48,8 @@
   ];
 
   documentation.dev.enable = true;
+  services.keybase.enable = true;
+  services.kbfs.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
