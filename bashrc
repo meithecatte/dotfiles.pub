@@ -1,5 +1,4 @@
 export EDITOR=vim
-export NIX_PATH="nixos-config=$HOME/.dotfiles/nixos/configuration.nix:$NIX_PATH"
 export GPG_TTY=$(tty)
 
 function gc() {
@@ -29,3 +28,5 @@ alias gb="git branch"
 alias gr="git rebase"
 alias vi="vim"
 alias lux="sudo tee /sys/class/backlight/intel_backlight/brightness <<<"
+
+alias rebuild="sudo nixos-rebuild -I nixos-config=$HOME/.dotfiles/nixos/configuration.nix"
