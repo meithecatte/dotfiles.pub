@@ -1,0 +1,23 @@
+[user]
+	name = Jakub Kądziołka
+	email = kuba@kadziolka.net
+	signingkey = E576BFB2CF6EB13DF57133B9E315A75846131564
+[push]
+	default = current
+[commit]
+	gpgsign = true
+[pull]
+	rebase = merges
+[core]
+	attributesfile = /home/kuba/.gitattributes
+	excludesfile = /home/kuba/.gitignore
+[alias]
+	amend = commit --amend
+[credential]
+	helper = !pass-git-helper $@
+[sendemail]
+	suppresscc = self
+	smtpencryption = tls
+	smtpserver = smtp.zlotemysli.pl
+	smtpuser = kuba@kadziolka.net
+	smtpserverport = 587

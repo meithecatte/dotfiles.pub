@@ -1,0 +1,4 @@
+# Sameboy savestates
+*.s[0-9]
+# Vim swapfiles
+.*.swp
