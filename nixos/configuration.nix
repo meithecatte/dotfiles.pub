@@ -83,7 +83,7 @@
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-        dmenu i3status i3lock
+        dmenu i3status
       ];
     };
   };
@@ -99,6 +99,12 @@
   services.redshift.enable = true;
   location.latitude = 52.;
   location.longitude = 21.;
+
+  programs.xss-lock = {
+    enable = true;
+    lockerCommand = "${pkgs.xsecurelock}/bin/xsecurelock";
+    extraOptions = ["--transfer-sleep-lock"];
+  };
 
   users.users.kuba = {
     isNormalUser = true;
