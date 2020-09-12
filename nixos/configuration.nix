@@ -96,6 +96,10 @@
     disableWhileTyping = true;
   };
 
+  services.redshift.enable = true;
+  location.latitude = 52.;
+  location.longitude = 21.;
+
   users.users.kuba = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
