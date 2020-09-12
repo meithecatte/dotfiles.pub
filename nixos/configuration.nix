@@ -43,7 +43,10 @@
     pass git pinentry-curses gnupg
     aerc quasselClient
     rcm zsh alacritty
+    manpages
   ];
+
+  documentation.dev.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
