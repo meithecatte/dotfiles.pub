@@ -44,6 +44,7 @@
     aerc quasselClient
     rcm zsh alacritty
     manpages
+    ripgrep tokei fd bat gitAndTools.delta
   ];
 
   documentation.dev.enable = true;
