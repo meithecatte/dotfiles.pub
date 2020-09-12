@@ -20,7 +20,11 @@
 
   boot.initrd.luks.devices."rootfs".device = "/dev/disk/by-uuid/7d1c1f79-1d4f-49de-b80e-a1fcce23bf9d";
 
-  swapDevices = [ ];
+  swapDevices = [
+    { device = "/swapfile";
+      size = 8192;
+    }
+  ];
 
   nix.maxJobs = lib.mkDefault 4;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
