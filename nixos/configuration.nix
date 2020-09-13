@@ -35,10 +35,41 @@
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
 
+  nixpkgs.config.packageOverrides = pkgs: rec {
+    myNeovim = pkgs.neovim.override {
+      configure = {
+        packages.myVimPackage = with pkgs.vimPlugins; {
+          start = [ repeat surround vim-nix ];
+          opt = [ ];
+        };
+
+        customRC = ''
+          set number relativenumber
+          colorscheme darkblue
+          " Show whitespace
+          set list
+
+          nnoremap zx :w<cr>
+          nnoremap <silent> z/ :noh<cr>
+          nnoremap Q <Nop>
+          nnoremap K r<cr>
+          nnoremap gb :ls<CR>:b<space>
+
+          inoremap !jk Jakub Kądziołka
+          inoremap !pz Pozdrawiam,<CR>Jakub Kądziołka
+          inoremap !rg Regards,<CR>Jakub Kądziołka
+          inoremap !ios ios::sync_with_stdio(false); cin.tie();
+          inoremap !std using namespace std;
+          inoremap @kk kuba@kadziolka.net
+        '';
+      };
+    };
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    tmux vimHugeX
+    tmux myNeovim
     firefox keybase-gui
     pass git pinentry-curses gnupg
     aerc quasselClient
