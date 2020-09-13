@@ -105,7 +105,7 @@
 
   programs.xss-lock = {
     enable = true;
-    lockerCommand = "${pkgs.xsecurelock}/bin/xsecurelock";
+    lockerCommand = "${pkgs.bash}/bin/sh -c 'XSECURELOCK_BLANK_TIMEOUT=3 ${pkgs.xsecurelock}/bin/xsecurelock'";
     extraOptions = ["--transfer-sleep-lock"];
   };
 
