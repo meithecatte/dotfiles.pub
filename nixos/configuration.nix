@@ -69,6 +69,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    file
     tmux myNeovim
     firefox keybase-gui
     pass git gnupg
@@ -76,6 +77,10 @@
     rcm zsh alacritty
     manpages
     ripgrep tokei fd bat gitAndTools.delta
+
+    tectonic zathura watchexec
+
+    isabelle
   ];
 
   documentation.dev.enable = true;
