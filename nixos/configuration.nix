@@ -45,7 +45,7 @@
 
         customRC = ''
           set number relativenumber
-          colorscheme darkblue
+          set expandtab softtabstop=2 shiftwidth=2
           " Show whitespace
           set list
 
