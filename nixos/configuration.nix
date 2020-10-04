@@ -24,6 +24,10 @@
   networking.useDHCP = false;
   networking.interfaces.enp2s0f1.useDHCP = true;
   networking.interfaces.wlp3s0.useDHCP = true;
+  networking.wireless.extraConfig = ''
+    ctrl_interface=/run/wpa_supplicant
+    ctrl_interface_group=wheel
+  '';
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_IE.UTF-8";
