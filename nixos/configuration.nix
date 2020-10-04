@@ -74,9 +74,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    file
-    tmux myNeovim
-    firefox keybase-gui
+    file wget
+    tmux myNeovim unixtools.xxd
+    firefox keybase-gui libreoffice
     pass git gnupg
     aerc quasselClient
     rcm zsh alacritty
@@ -86,15 +86,21 @@
     tectonic zathura watchexec
 
     isabelle
+
+    rustup gcc10
+    python3
+
+    nix-index
+
+    gnome3.adwaita-icon-theme
   ];
 
   documentation.dev.enable = true;
   services.keybase.enable = true;
   services.kbfs.enable = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
+  programs.traceroute.enable = true;
+  programs.dconf.enable = true;
   programs.gnupg.agent = {
     enable = true;
     pinentryFlavor = "curses";
@@ -123,7 +129,7 @@
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-        dmenu i3status
+        dmenu i3status maim
       ];
     };
   };
