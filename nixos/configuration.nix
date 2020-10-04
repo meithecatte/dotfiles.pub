@@ -49,7 +49,8 @@
 
         customRC = ''
           set number relativenumber
-          set expandtab softtabstop=2 shiftwidth=2
+          set expandtab softtabstop=4 shiftwidth=4
+          set hidden
           " Show whitespace
           set list
 
