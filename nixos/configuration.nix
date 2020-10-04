@@ -43,7 +43,7 @@
     myNeovim = pkgs.neovim.override {
       configure = {
         packages.myVimPackage = with pkgs.vimPlugins; {
-          start = [ repeat surround vim-nix ];
+          start = [ repeat surround vim-nix vim-toml ];
           opt = [ ];
         };
 
