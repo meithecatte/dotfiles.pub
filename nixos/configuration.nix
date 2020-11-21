@@ -15,6 +15,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Kernel modules
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+
   networking.hostName = "gravity";
   networking.wireless.enable = true;
 
@@ -74,21 +77,26 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    file wget
+    file wget zip unzip tree units
     tmux myNeovim unixtools.xxd
     firefox keybase-gui libreoffice
-    pass git gnupg
+    gimp audacity
+    pass gnupg
+    git gitAndTools.delta gitAndTools.hub
     aerc quasselClient
     rcm zsh alacritty
     manpages
-    ripgrep tokei fd bat gitAndTools.delta
+    ripgrep tokei fd bat
+    mosh
+    vlc
+    wineWowPackages.full
 
     tectonic zathura watchexec
 
-    isabelle
+    isabelle xpra
 
-    rustup gcc10
-    python3
+    rustup cargo-asm cargo-expand gcc10
+    (python3.withPackages (ps: with ps; [ z3 ]))
 
     nix-index
 
@@ -98,6 +106,7 @@
   documentation.dev.enable = true;
   services.keybase.enable = true;
   services.kbfs.enable = true;
+  services.vnstat.enable = true;
 
   programs.traceroute.enable = true;
   programs.dconf.enable = true;
@@ -154,7 +163,7 @@
 
   users.users.kuba = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" "video" ];
   };
 
   security.sudo.wheelNeedsPassword = false;
