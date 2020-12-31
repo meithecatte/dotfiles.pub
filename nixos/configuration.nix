@@ -50,26 +50,7 @@
           opt = [ ];
         };
 
-        customRC = ''
-          set number relativenumber
-          set expandtab softtabstop=4 shiftwidth=4
-          set hidden
-          " Show whitespace
-          set list
-
-          nnoremap zx :w<cr>
-          nnoremap <silent> z/ :noh<cr>
-          nnoremap Q <Nop>
-          nnoremap K r<cr>
-          nnoremap gb :ls<CR>:b<space>
-
-          inoremap !jk Jakub Kądziołka
-          inoremap !pz Pozdrawiam,<CR>Jakub Kądziołka
-          inoremap !rg Regards,<CR>Jakub Kądziołka
-          inoremap !ios ios::sync_with_stdio(false); cin.tie();
-          inoremap !std using namespace std;
-          inoremap @kk kuba@kadziolka.net
-        '';
+        customRC = builtins.readFile ../vimrc;
       };
     };
   };
