@@ -46,7 +46,7 @@
     myNeovim = pkgs.neovim.override {
       configure = {
         packages.myVimPackage = with pkgs.vimPlugins; {
-          start = [ repeat surround vim-nix vim-toml ];
+          start = [ repeat surround vim-nix vim-toml idris-vim ];
           opt = [ ];
         };
 
@@ -77,7 +77,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    file wget zip unzip tree units
+    file wget zip unzip tree pstree units
     tmux myNeovim unixtools.xxd
     firefox keybase-gui libreoffice
     gimp audacity
@@ -95,7 +95,7 @@
 
     isabelle xpra
 
-    rustup cargo-asm cargo-expand gcc10
+    rustup cargo-asm cargo-expand gcc10 gdb just
     (python3.withPackages (ps: with ps; [ z3 ]))
 
     nix-index
