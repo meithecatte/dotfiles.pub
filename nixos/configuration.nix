@@ -96,7 +96,7 @@
     isabelle xpra
 
     rustup cargo-asm cargo-expand gcc10 gdb just
-    (python3.withPackages (ps: with ps; [ z3 ]))
+    (python3.withPackages (ps: with ps; [ z3 pwntools ]))
 
     nix-index
 
