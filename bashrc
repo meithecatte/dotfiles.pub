@@ -30,3 +30,7 @@ alias vi="nvim"
 alias lux="sudo tee /sys/class/backlight/intel_backlight/brightness <<<"
 
 alias rebuild="sudo nixos-rebuild -I nixos-config=$HOME/.dotfiles/nixos/configuration.nix"
+
+# Make man prefer sections 2 and 3 to section 1, because I want printf(3)
+# much more often than printf(1)
+export MANSECT="n,l,8,3,0,2,1,5,4,9,6,7"
