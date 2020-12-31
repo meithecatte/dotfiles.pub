@@ -34,3 +34,4 @@ alias rebuild="sudo nixos-rebuild -I nixos-config=$HOME/.dotfiles/nixos/configur
 # Make man prefer sections 2 and 3 to section 1, because I want printf(3)
 # much more often than printf(1)
 export MANSECT="n,l,8,3,0,2,1,5,4,9,6,7"
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
