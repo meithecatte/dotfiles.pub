@@ -89,6 +89,12 @@
   services.kbfs.enable = true;
   services.vnstat.enable = true;
 
+  services.earlyoom = {
+    enable = true;
+    freeMemThreshold = 5;
+    freeSwapThreshold = 100;
+  };
+
   programs.traceroute.enable = true;
   programs.dconf.enable = true;
   programs.gnupg.agent = {
