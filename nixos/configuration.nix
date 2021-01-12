@@ -63,7 +63,7 @@
     firefox keybase-gui libreoffice
     gimp audacity
     pass gnupg
-    git gitAndTools.delta gitAndTools.hub
+    gitFull gitAndTools.delta gitAndTools.hub gitAndTools.pass-git-helper
     aerc quasselClient
     rcm zsh alacritty
     manpages
