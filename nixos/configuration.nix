@@ -150,9 +150,11 @@
     extraOptions = ["--transfer-sleep-lock"];
   };
 
+  programs.adb.enable = true;
+
   users.users.kuba = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "video" ];
+    extraGroups = [ "wheel" "docker" "video" "adbusers" ];
   };
 
   security.sudo.wheelNeedsPassword = false;
