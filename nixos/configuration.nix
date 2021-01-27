@@ -92,7 +92,7 @@
   services.earlyoom = {
     enable = true;
     freeMemThreshold = 5;
-    freeSwapThreshold = 100;
+    freeSwapThreshold = 95;
   };
 
   programs.traceroute.enable = true;
