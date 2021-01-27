@@ -133,9 +133,11 @@
   # Enable touchpad support.
   services.xserver.libinput = {
     enable = true;
-    accelSpeed = "0.01";
-    tapping = false;
-    disableWhileTyping = true;
+    touchpad = {
+      accelSpeed = "0.01";
+      tapping = false;
+      disableWhileTyping = true;
+    };
   };
 
   services.redshift.enable = true;
