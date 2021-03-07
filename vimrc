@@ -27,4 +27,5 @@ inoremap @kk kuba@kadziolka.net
 augroup filetypes
     au!
     autocmd FileType scheme syn sync fromstart
+    autocmd FileType haskell setlocal shiftwidth=2 softtabstop=2
 augroup END
