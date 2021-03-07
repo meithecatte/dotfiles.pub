@@ -6,7 +6,6 @@ set hidden
 set list listchars=tab:>.,trail:$
 " Linux-style tab completion in command mode - complete until first ambiguity
 set wildmode=list:longest
-set clipboard=autoselect,unnamedplus
 
 nnoremap zx :w<cr>
 " hide hlsearch
