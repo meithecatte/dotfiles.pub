@@ -39,7 +39,29 @@
     keyMap = "pl";
   };
 
-  # Set your time zone.
+  fonts.fonts = with pkgs; [
+    dejavu_fonts
+    ipafont
+  ];
+
+  fonts.fontconfig.defaultFonts = {
+    monospace = [
+      "DejaVu Sans Mono"
+      "IPAGothic"
+    ];
+    sansSerif = [
+      "DejaVu Sans"
+      "IPAPGothic"
+    ];
+    serif = [
+      "DejaVu Serif"
+      "IPAPMincho"
+    ];
+  };
+
+  i18n.inputMethod.enabled = "fcitx";
+  i18n.inputMethod.fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
+
   time.timeZone = "Europe/Warsaw";
 
   nixpkgs.config.packageOverrides = pkgs: rec {
