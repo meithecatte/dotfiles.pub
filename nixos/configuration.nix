@@ -68,7 +68,7 @@
     myNeovim = pkgs.neovim.override {
       configure = {
         packages.myVimPackage = with pkgs.vimPlugins; {
-          start = [ repeat surround vim-nix vim-toml idris-vim ];
+          start = [ repeat surround vim-nix vim-toml idris-vim rust-vim ];
           opt = [ ];
         };
 
@@ -82,7 +82,7 @@
   environment.systemPackages = with pkgs; [
     file wget zip unzip tree pstree units
     tmux myNeovim unixtools.xxd
-    firefox keybase-gui libreoffice
+    firefox chromium keybase-gui libreoffice
     gimp audacity
     pass gnupg
     gitFull gitAndTools.delta gitAndTools.hub gitAndTools.pass-git-helper
@@ -98,7 +98,7 @@
 
     isabelle xpra
 
-    rustup cargo-asm cargo-expand gcc10 gdb just
+    rustup cargo-asm cargo-expand gcc10 gdb strace ltrace just
     (python3.withPackages (ps: with ps; [ z3 pwntools ]))
 
     nix-index
