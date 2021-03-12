@@ -1,4 +1,0 @@
-! This file instructs fcitx to include the remapping from Caps Lock to Esc in its keyboard
-! layout modifications
-remove Lock = Caps_Lock
-keysym Caps_Lock = Escape
