@@ -181,6 +181,17 @@
 
   security.sudo.wheelNeedsPassword = false;
 
+  nix = {
+    distributedBuilds = true;
+    buildMachines = [{
+      hostName = "192.168.0.50";
+      maxJobs = 2;
+      sshKey = "/home/kuba/.ssh/id_rsa";
+      sshUser = "kuba";
+      system = "x86_64-linux";
+    }];
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
