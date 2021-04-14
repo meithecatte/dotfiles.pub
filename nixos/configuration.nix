@@ -68,7 +68,7 @@
     myNeovim = pkgs.neovim.override {
       configure = {
         packages.myVimPackage = with pkgs.vimPlugins; {
-          start = [ repeat surround vim-nix vim-toml idris-vim rust-vim ];
+          start = [ repeat surround vim-nix vim-toml idris-vim rust-vim Coqtail ];
           opt = [ ];
         };
 
