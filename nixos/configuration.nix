@@ -176,7 +176,7 @@
 
   users.users.kuba = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "video" "adbusers" ];
+    extraGroups = [ "wheel" "docker" "video" "adbusers" "vboxusers" ];
   };
 
   security.sudo.wheelNeedsPassword = false;
@@ -191,6 +191,8 @@
       system = "x86_64-linux";
     }];
   };
+
+  virtualisation.virtualbox.host.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
