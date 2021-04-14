@@ -98,7 +98,7 @@
 
     isabelle xpra
 
-    rustup cargo-asm cargo-expand gcc10 gdb strace ltrace just
+    rustup cargo-asm cargo-expand cargo-edit gcc10 gdb strace ltrace just
     (python3.withPackages (ps: with ps; [ z3 pwntools ]))
 
     nix-index
