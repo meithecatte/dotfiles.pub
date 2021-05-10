@@ -135,6 +135,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # nsjail needs this
+  systemd.enableUnifiedCgroupHierarchy = false;
+
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
