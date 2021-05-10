@@ -26,6 +26,8 @@ inoremap @kk kuba@kadziolka.net
 
 augroup filetypes
     au!
+    autocmd BufRead,BufNewFile,BufWritePost *.sage setlocal filetype=python
+    autocmd BufRead,BufNewFile,BufWritePost *.lalrpop setlocal filetype=rust
     autocmd FileType scheme syn sync fromstart
     autocmd FileType haskell setlocal shiftwidth=2 softtabstop=2
 augroup END
