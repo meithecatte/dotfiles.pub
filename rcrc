@@ -1,1 +1,1 @@
-EXCLUDES="LICENSE nixos secrets"
+EXCLUDES="LICENSE nixos secrets backup.sh"
