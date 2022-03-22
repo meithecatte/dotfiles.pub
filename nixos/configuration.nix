@@ -1,8 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -110,6 +106,10 @@
   services.keybase.enable = true;
   services.kbfs.enable = true;
   services.vnstat.enable = true;
+
+  # Install tor, but don't start on boot
+  services.tor.enable = true;
+  systemd.services.tor.wantedBy = lib.mkForce [];
 
   services.earlyoom = {
     enable = true;
