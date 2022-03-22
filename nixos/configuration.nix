@@ -15,7 +15,10 @@
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Kernel modules
-  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    # OBS-as-webcam
+    v4l2loopback
+  ];
 
   networking.hostName = "gravity";
   networking.wireless.enable = true;
@@ -43,6 +46,7 @@
     ipafont
   ];
 
+  # Japanese fallback fonts
   fonts.fontconfig.defaultFonts = {
     monospace = [
       "DejaVu Sans Mono"
@@ -58,6 +62,7 @@
     ];
   };
 
+  # Japanese IME
   i18n.inputMethod.enabled = "fcitx";
   i18n.inputMethod.fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
 
@@ -185,6 +190,7 @@
     extraGroups = [ "wheel" "docker" "video" "adbusers" "vboxusers" ];
   };
 
+  # YOLO
   security.sudo.wheelNeedsPassword = false;
 
   nix = {
@@ -207,6 +213,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "20.03"; # Did you read the comment?
-
 }
 
