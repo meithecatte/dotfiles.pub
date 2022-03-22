@@ -44,6 +44,7 @@
   fonts.fonts = with pkgs; [
     dejavu_fonts
     ipafont
+    comic-relief
   ];
 
   # Japanese fallback fonts
@@ -72,7 +73,14 @@
     myNeovim = pkgs.neovim.override {
       configure = {
         packages.myVimPackage = with pkgs.vimPlugins; {
-          start = [ repeat surround editorconfig-vim vim-nix vim-toml idris-vim rust-vim Coqtail ];
+          start = [
+            repeat surround editorconfig-vim
+            vim-nix vim-toml typescript-vim
+            idris-vim rust-vim Coqtail
+            vim-plugin-AnsiEsc
+            ats-vim zig-vim
+            UltiSnips
+          ];
           opt = [ ];
         };
 
@@ -89,29 +97,39 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     file wget zip unzip tree pstree units
-    tmux myNeovim unixtools.xxd
-    firefox chromium keybase-gui libreoffice
+    tmux myNeovim xclip unixtools.xxd
+    firefox
+    chromium keybase-gui libreoffice
     gimp audacity
     pass gnupg
     gitFull gitAndTools.delta gitAndTools.hub gitAndTools.pass-git-helper
     aerc quasselClient
     rcm zsh alacritty
-    manpages
+    man-pages
     ripgrep tokei fd bat
     mosh
     vlc
+    feh
     wineWowPackages.full
+    borgbackup
 
-    tectonic zathura watchexec
+    gimp inkscape
 
-    isabelle xpra
+    tectonic zathura watchexec pandoc
 
-    rustup cargo-asm cargo-expand cargo-edit gcc10 gdb strace ltrace just
-    (python3.withPackages (ps: with ps; [ z3 pwntools ]))
+    #isabelle xpra
+
+    rustup cargo-asm cargo-expand cargo-edit cargo-release
+    gcc10 gdb strace ltrace just
+    (python3.withPackages (ps: with ps; [ z3 pwntools pycryptodome ]))
 
     nix-index
 
+    torsocks
+
     gnome3.adwaita-icon-theme
+
+    usbutils pciutils
   ];
 
   documentation.dev.enable = true;
