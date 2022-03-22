@@ -1,0 +1,7 @@
+clear Lock
+clear Mod4
+
+keycode 66 = Escape
+keycode 9 = Hyper_L
+
+add Mod4 = Hyper_L

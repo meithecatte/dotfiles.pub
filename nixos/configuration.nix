@@ -215,7 +215,7 @@
   services.xserver = {
     enable = true;
     layout = "pl";
-    xkbOptions = "caps:escape";
+    displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap /home/kuba/.Xmodmap";
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
