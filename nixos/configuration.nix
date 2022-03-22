@@ -11,6 +11,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Use the Zen kernel for improved system responsiveness
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   # Kernel modules
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
 
