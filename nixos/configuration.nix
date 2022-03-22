@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -125,8 +125,6 @@
 
     nix-index
 
-    torsocks
-
     gnome3.adwaita-icon-theme
 
     usbutils pciutils
@@ -137,9 +135,7 @@
   services.kbfs.enable = true;
   services.vnstat.enable = true;
 
-  # Install tor, but don't start on boot
-  services.tor.enable = true;
-  systemd.services.tor.wantedBy = lib.mkForce [];
+  services.tailscale.enable = true;
 
   services.earlyoom = {
     enable = true;
